@@ -1,4 +1,4 @@
-.header{
+header{
     font-size: 50px;
     background-color: #800000;
     padding: 15px;
@@ -13,13 +13,13 @@
     color: white;
 }
 
-.header a {
+header a {
     text-decoration: none;
     color: white;
     margin: 0 15px;
 }
 
-.header a:hover {
+header a:hover {
     text-decoration: underline;
 }
 
@@ -27,8 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    height: 1000px;
     margin-top: 100px;
     padding: 50px;
     background-color: #f4f4f4;
