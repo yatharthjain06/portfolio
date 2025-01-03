@@ -25,15 +25,27 @@ header a:hover {
 
 #about-section {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 1000px;
     margin-top: 100px;
-    padding: 50px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 8px;
+    padding: 20px;
+    gap: 20px; 
 }
+
+#about-section img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+#about-section div {
+    max-width: 500px;
+}
+
+
 
 #projects-section {
     display: flex;
@@ -41,7 +53,6 @@ header a:hover {
     align-items: center;
     height: 1000px;
     margin-top: 100px;
-    padding: 50px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -53,7 +64,6 @@ header a:hover {
     align-items: center;
     height: 1000px;
     margin-top: 100px;
-    padding: 50px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -65,7 +75,6 @@ header a:hover {
     align-items: center;
     height: 1000px;
     margin-top: 100px;
-    padding: 50px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 8px;
