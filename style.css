@@ -119,7 +119,31 @@ header a:hover {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
     gap: 20px;
+    text-align: center;
     padding: 20px;
+}
+
+.contact-card {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
