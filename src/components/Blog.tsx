@@ -1,16 +1,17 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
+import { blogPosts } from '@/data/blogPosts';
 
 interface BlogPost {
   title: string;
   date: string;
   description: string;
-  link: string;
+  slug: string;
 }
 
-const BlogCard: React.FC<BlogPost> = ({ title, date, description, link }) => {
+const BlogCard: React.FC<BlogPost> = ({ title, date, description, slug }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
       <div className="p-6">
@@ -19,36 +20,18 @@ const BlogCard: React.FC<BlogPost> = ({ title, date, description, link }) => {
           <span className="text-sm text-gray-500">{date}</span>
         </div>
         <p className="text-gray-600 mb-4">{description}</p>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={`/blog/${slug}`}
           className="inline-block bg-maroon-700 text-white px-4 py-2 rounded-lg hover:bg-maroon-800 transition-colors"
         >
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );
 };
 
 const Blog = () => {
-  const blogPosts: BlogPost[] = [
-    {
-      title: "Getting Started with Next.js",
-      date: "May 2024",
-      description: "My journey learning Next.js and building my first portfolio website. Sharing insights and lessons learned along the way.",
-      link: "#",
-    },
-    {
-      title: "Java Development Best Practices",
-      date: "April 2024",
-      description: "Lessons learned from developing BizChat and ChronoDo. Tips for building better Java applications.",
-      link: "#",
-    },
-    // Add more blog posts here
-  ];
-
   return (
     <section id="blog" className="py-8 bg-gray-50">
       <div className="container mx-auto px-6">

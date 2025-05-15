@@ -2,8 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-maroon-700 text-white">
       <nav className="container mx-auto px-6 py-4">
@@ -12,21 +16,43 @@ const Header = () => {
             Yatharth Jain
           </Link>
           <div className="hidden md:flex space-x-8">
-            <Link href="#about" className="hover:text-gray-200 transition-colors">
-              About Me
-            </Link>
-            <Link href="#projects" className="hover:text-gray-200 transition-colors">
-              Projects
-            </Link>
-            <Link href="#blog" className="hover:text-gray-200 transition-colors">
-              Blog
-            </Link>
-            <Link href="#resume" className="hover:text-gray-200 transition-colors">
-              Resume
-            </Link>
-            <Link href="#contact" className="hover:text-gray-200 transition-colors">
-              Contact
-            </Link>
+            {isHomePage ? (
+              <>
+                <Link href="#about" className="hover:text-gray-200 transition-colors">
+                  About Me
+                </Link>
+                <Link href="#projects" className="hover:text-gray-200 transition-colors">
+                  Projects
+                </Link>
+                <Link href="/blog" className="hover:text-gray-200 transition-colors">
+                  Blog
+                </Link>
+                <Link href="#resume" className="hover:text-gray-200 transition-colors">
+                  Resume
+                </Link>
+                <Link href="#contact" className="hover:text-gray-200 transition-colors">
+                  Contact
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href="/#about" className="hover:text-gray-200 transition-colors">
+                  About Me
+                </Link>
+                <Link href="/#projects" className="hover:text-gray-200 transition-colors">
+                  Projects
+                </Link>
+                <Link href="/blog" className="hover:text-gray-200 transition-colors">
+                  Blog
+                </Link>
+                <Link href="/#resume" className="hover:text-gray-200 transition-colors">
+                  Resume
+                </Link>
+                <Link href="/#contact" className="hover:text-gray-200 transition-colors">
+                  Contact
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
