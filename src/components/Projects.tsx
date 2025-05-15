@@ -45,6 +45,7 @@ const Projects = () => {
       title: "BizChat",
       description: "A social messaging platform using Swing with Java on IntelliJ.",
       image: "/BizChat.png",
+      link: "https://github.com/yatharthjain06/CS180-Team-Project"
     },
     {
       title: "ChronoDo",
@@ -55,10 +56,10 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-8 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}

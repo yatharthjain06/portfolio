@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen pt-24 pb-16 bg-gray-50">
+    <section id="about" className="min-h-[60vh] pt-16 pb-4 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="relative w-48 h-48 md:w-64 md:h-64">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="relative w-40 h-40 md:w-56 md:h-56">
             <Image
               src="/YatharthJainProfilePicture.jpeg"
               alt="Yatharth Jain"
@@ -18,7 +18,7 @@ const About = () => {
             />
           </div>
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
               Hello, I'm Yatharth Jain
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
