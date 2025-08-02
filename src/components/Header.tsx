@@ -9,46 +9,52 @@ const Header = () => {
   const isHomePage = pathname === '/';
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-maroon-700 text-white">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect backdrop-blur-md">
+      <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold hover:text-gray-200 transition-colors">
+          <Link href="/" className="text-2xl font-bold gradient-text hover:scale-105 transform transition-all duration-300">
             Yatharth Jain
           </Link>
           <div className="hidden md:flex space-x-8">
             {isHomePage ? (
               <>
-                <Link href="#about" className="hover:text-gray-200 transition-colors">
+                <Link href="#about" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   About Me
                 </Link>
-                <Link href="#projects" className="hover:text-gray-200 transition-colors">
+                <Link href="#experience" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
+                  Experience
+                </Link>
+                <Link href="#projects" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Projects
                 </Link>
-                <Link href="#resume" className="hover:text-gray-200 transition-colors">
+                <Link href="#resume" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Resume
                 </Link>
-                <Link href="#contact" className="hover:text-gray-200 transition-colors">
+                <Link href="#contact" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Contact
                 </Link>
-                <Link href="/blog" className="hover:text-gray-200 transition-colors">
+                <Link href="/blog" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Blog
                 </Link>
               </>
             ) : (
               <>
-                <Link href="/#about" className="hover:text-gray-200 transition-colors">
+                <Link href="/#about" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   About Me
                 </Link>
-                <Link href="/#projects" className="hover:text-gray-200 transition-colors">
+                <Link href="/#experience" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
+                  Experience
+                </Link>
+                <Link href="/#projects" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Projects
                 </Link>
-                <Link href="/#resume" className="hover:text-gray-200 transition-colors">
+                <Link href="/#resume" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Resume
                 </Link>
-                <Link href="/#contact" className="hover:text-gray-200 transition-colors">
+                <Link href="/#contact" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Contact
                 </Link>
-                <Link href="/blog" className="hover:text-gray-200 transition-colors">
+                <Link href="/blog" className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105">
                   Blog
                 </Link>
               </>
