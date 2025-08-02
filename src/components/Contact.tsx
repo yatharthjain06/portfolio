@@ -49,8 +49,8 @@ const Contact = () => {
     {
       icon: "📧",
       label: "Email",
-      value: "jain787@purdue.edu",
-      link: "mailto:jain787@purdue.edu"
+      value: "yatharthjain0930@gmail.com",
+      link: "mailto:yatharthjain0930@gmail.com"
     },
     {
       icon: "💼",
@@ -100,7 +100,7 @@ const Contact = () => {
               Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you.
             </p>
             <a 
-              href="mailto:jain787@purdue.edu"
+              href="mailto:yatharthjain0930@gmail.com"
               className="inline-flex items-center gap-2 bg-white text-primary-600 font-bold py-3 px-8 rounded-xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Send me an email

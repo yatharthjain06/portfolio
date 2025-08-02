@@ -13,18 +13,35 @@ interface BlogPost {
 
 const BlogCard: React.FC<BlogPost> = ({ title, date, description, slug }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-3">
-          <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-          <span className="text-sm text-gray-500">{date}</span>
+    <div className="group card-glass hover-lift relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-400/5 to-secondary-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      
+      <div className="relative p-8">
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-gray-800 group-hover:text-primary-600 transition-colors duration-300 mb-2 leading-tight">
+              {title}
+            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-sm font-medium bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 px-3 py-1 rounded-full">
+                {date}
+              </span>
+            </div>
+          </div>
         </div>
-        <p className="text-gray-600 mb-4">{description}</p>
+        
+        <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+          {description}
+        </p>
+        
         <Link
           href={`/blog/${slug}`}
-          className="inline-block bg-maroon-700 text-white px-4 py-2 rounded-lg hover:bg-maroon-800 transition-colors"
+          className="inline-flex items-center gap-2 btn-primary text-sm group/btn"
         >
-          Read More
+          Read Article
+          <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </Link>
       </div>
     </div>
@@ -33,14 +50,41 @@ const BlogCard: React.FC<BlogPost> = ({ title, date, description, slug }) => {
 
 const Blog = () => {
   return (
-    <section id="blog" className="py-8 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Blog</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="blog" className="section-padding relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-primary-50/50 backdrop-blur-sm"></div>
+      
+      <div className="container-custom relative">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-800 mb-4">
+            My <span className="gradient-text">Blog</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full mx-auto mb-6"></div>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Thoughts, insights, and experiences from my journey in technology and software development
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
           {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
+            <div 
+              key={index} 
+              className="animate-slide-up"
+              style={{animationDelay: `${index * 0.2}s`}}
+            >
+              <BlogCard {...post} />
+            </div>
           ))}
         </div>
+        
+        {blogPosts.length === 0 && (
+          <div className="text-center py-16">
+            <div className="text-6xl mb-4">📝</div>
+            <h3 className="text-2xl font-bold text-gray-700 mb-4">Coming Soon!</h3>
+            <p className="text-gray-600 max-w-md mx-auto">
+              I'm working on some exciting blog posts. Check back soon for insights on technology, programming, and my journey as a developer.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
